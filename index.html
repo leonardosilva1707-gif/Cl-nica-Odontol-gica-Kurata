@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="kurata-logo.jpg">
+<title>Clínica Odontológica Kurata | Dentista em Taboão da Serra</title>
+<meta name="description" content="Clínica Odontológica Kurata, dentista em Taboão da Serra: clínico geral, estética, ortodontia, endodontia, lentes e próteses. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== CORES (tiradas do vídeo da clínica: rosé, dourado e cacau) ===== */
+:root{--pearl:#FBF4F1;--blush:#F0DDD5;--rose:#671616;--rose2:#541212;--gold:#CFA46B;--cocoa:#3B2421;--dark:#2A1917;--muted:#7A5C57;--wa:#25D366;--pad:clamp(20px,5vw,48px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 1.0625rem/1.65 Jost,system-ui,sans-serif;color:var(--cocoa);background:var(--pearl);overflow-x:clip}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,8vw,4.6rem)}h2{font-size:clamp(2.1rem,6vw,3.4rem)}
+a{color:inherit}img,svg,canvas,video{max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:auto;padding:clamp(64px,10vw,120px) var(--pad)}
+.lead{color:var(--muted);max-width:52ch;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 28px;border-radius:99px;background:var(--rose);color:#fff;text-decoration:none;font:500 1rem Jost,sans-serif;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--rose2)}
+.btn.ghost{background:transparent;color:var(--rose);box-shadow:inset 0 0 0 1.5px var(--rose)}
+.btn svg{width:22px;height:22px;fill:currentColor}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* ===== 1. ABERTURA: a logo da clínica ===== */
+#top{position:relative;min-height:100vh;min-height:100svh;display:grid;place-content:center;justify-items:center;gap:28px;padding:calc(24px + env(safe-area-inset-top,0px)) var(--pad) calc(96px + env(safe-area-inset-bottom,0px));background:#F2CDC5;text-align:center}
+#top img{width:min(90vw,560px,58svh);height:auto;display:block;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.ctl{display:grid;justify-items:center;gap:12px}
+.ctl small{color:var(--cocoa);font-size:.9rem}
+@media(prefers-reduced-motion:no-preference){#top img{animation:in 1.6s ease both}@keyframes in{from{opacity:0;transform:scale(.97)}}}
+
+/* ===== 2. APRESENTAÇÃO + DENTE 3D ===== */
+.intro{display:grid;gap:24px;align-items:center}
+.stage{position:relative;width:100%;aspect-ratio:1;max-height:520px;border-radius:32px;background:radial-gradient(circle at 50% 45%,var(--blush),var(--pearl) 70%)}
+.stage canvas{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
+@media(min-width:860px){.intro{grid-template-columns:1.05fr .95fr;gap:56px}}
+
+/* ===== 3. TRATAMENTOS ===== */
+.cards{display:grid;gap:14px;margin-top:40px}
+.card{padding:28px;border-radius:24px;background:#fff;border:1px solid var(--blush)}
+.card:nth-child(2){background:var(--cocoa);color:var(--pearl);border-color:var(--cocoa)}
+.card:nth-child(4){background:var(--blush)}
+.card svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;margin-bottom:18px}
+.card h3{font-size:1.75rem;margin-bottom:8px}.card p{font-size:1rem}
+@media(min-width:720px){.cards{grid-template-columns:repeat(6,1fr)}.card{grid-column:span 2}.card:nth-child(1),.card:nth-child(4){grid-column:span 4}.card:nth-child(5),.card:nth-child(6){grid-column:span 3}}
+
+/* ===== 4. DENTE INTERATIVO ===== */
+.lab{background:var(--dark);color:var(--pearl)}
+.lab .wrap{display:grid;gap:32px;align-items:center}
+.lab .stage{background:radial-gradient(circle at 50% 45%,#5a3a35,var(--dark) 72%)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.chip{min-height:44px;padding:0 20px;border-radius:99px;border:1.5px solid #6b4a45;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+#info{min-height:7.5em;color:#E9D6CE}#info b{font:600 1.6rem "Cormorant Garamond",serif;color:var(--gold)}
+.lab label{display:flex;justify-content:space-between;margin-top:8px}
+input[type=range]{width:100%;accent-color:var(--gold);height:32px}
+.lab small{display:block;color:#bfa59d;margin-top:10px}
+#nogl{display:none;padding:24px;text-align:center;color:#bfa59d}
+@media(min-width:860px){.lab .wrap{grid-template-columns:1.1fr .9fr;gap:56px}}
+
+/* ===== 5. SOBRE ===== */
+.about{display:grid;gap:32px;align-items:center}
+.photo{aspect-ratio:4/5;max-width:420px;width:100%;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--blush),#d9b3a7);display:grid;place-items:center;text-align:center;padding:24px;color:var(--rose);font-size:.95rem}
+.about ul{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px}
+.about li{padding-left:30px;position:relative}
+.about li::before{content:"";position:absolute;left:0;top:.8em;width:16px;height:1.5px;background:var(--gold)}
+@media(min-width:860px){.about{grid-template-columns:.8fr 1.2fr;gap:64px}}
+
+/* ===== 6. DEPOIMENTOS / 7. FAQ ===== */
+.quotes{display:grid;gap:14px;margin-top:36px}
+blockquote{padding:28px;border-radius:24px;background:var(--blush);font:500 1.35rem/1.35 "Cormorant Garamond",serif}
+blockquote cite{display:block;margin-top:16px;font:400 .95rem Jost,sans-serif;color:var(--muted);font-style:normal}
+@media(min-width:860px){.quotes{grid-template-columns:repeat(3,1fr)}}
+details{border-bottom:1px solid var(--blush);padding:20px 0}
+summary{cursor:pointer;font:600 1.5rem/1.2 "Cormorant Garamond",serif;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--rose);font-size:1.6rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:60ch}
+
+/* ===== 8. AGENDAR + RODAPÉ ===== */
+.cta{background:var(--blush);text-align:center}
+.cta .wrap{display:grid;justify-items:center;gap:18px}
+.info{display:grid;gap:12px;margin-top:20px;width:100%;max-width:820px;text-align:left}
+.info div{padding:20px;border-radius:20px;background:var(--pearl);font-size:1rem}
+.info b{display:block;font:600 1.4rem "Cormorant Garamond",serif}
+@media(min-width:720px){.info{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--dark);color:#CDB5AD;padding:40px var(--pad) calc(100px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.95rem;display:grid;gap:8px;justify-items:center}
+footer .soc{display:flex;gap:18px}
+#wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+#wa svg{width:34px;height:34px;fill:#fff}
+
+/* animações discretas (desligadas se a pessoa prefere menos movimento) */
+@media(prefers-reduced-motion:no-preference){
+ .js .rv{opacity:0;transition:opacity .9s}.js .rv.in{opacity:1}
+ #wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:p 2.4s infinite}
+ @keyframes p{to{transform:scale(1.5);opacity:0}}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol></svg>
+
+<!-- 1. ABERTURA: a logo é a primeira coisa que aparece -->
+<header id="top">
+  <img src="kurata-logo.jpg" width="828" height="823" alt="Clínica Kurata, Odontologia Estética" fetchpriority="high">
+  <div class="ctl"><a class="btn" href="https://wa.me/5511959164208?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Kurata%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a><small>Role para conhecer a clínica</small></div>
+</header>
+
+<main>
+<!-- 2. APRESENTAÇÃO -->
+<section class="wrap intro" id="inicio">
+  <div class="rv">
+    <h1>Seu sorriso merece cuidado de verdade</h1>
+    <p class="lead">Odontologia estética em Taboão da Serra, com planejamento individual: você entende cada etapa, o prazo e o valor antes de começar.</p>
+    <div class="row"><a class="btn" href="https://wa.me/5511959164208?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Kurata%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a><a class="btn ghost" href="#tratamentos">Ver tratamentos</a></div>
+  </div>
+  <div class="stage rv"><canvas id="c1" aria-label="Dente em 3D. Arraste para girar."></canvas></div>
+</section>
+
+<!-- 3. TRATAMENTOS -->
+<section class="wrap" id="tratamentos" style="padding-top:0">
+  <h2 class="rv">Tratamentos</h2>
+  <div class="cards">
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg><h3>Clínico geral</h3><p>Consultas de rotina, limpeza, restaurações e prevenção. O ponto de partida para cuidar dos dentes e da gengiva.</p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg><h3>Estética</h3><p>Clareamento e outros procedimentos para harmonizar cor e formato dos dentes, com técnica acompanhada. O resultado varia de pessoa para pessoa.</p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M3 12h18"/><rect x="5" y="9" width="4" height="6" rx="1"/><rect x="15" y="9" width="4" height="6" rx="1"/></svg><h3>Ortodontia</h3><p>Aparelhos fixos ou alinhadores transparentes para corrigir a posição dos dentes e a mordida.</p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M12 3c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z"/></svg><h3>Endodontia</h3><p>Tratamento de canal para salvar dentes com dor ou infecção interna, com anestesia e atenção ao seu conforto.</p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M4 8c4-4 12-4 16 0-1 7-4 11-8 11S5 15 4 8z"/></svg><h3>Lentes de contato dental</h3><p>Lâminas finas que melhoram cor, formato e alinhamento de dentes selecionados, após avaliação.</p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24"><path d="M8 3h8M8 7h8M9 11h6M10 15h4M12 15v6"/></svg><h3>Próteses</h3><p>Substituem dentes ausentes ou muito comprometidos, devolvendo mastigação, fala e aparência natural.</p></article>
+  </div>
+</section>
+
+<!-- 4. DENTE INTERATIVO -->
+<section class="lab" id="dente">
+  <div class="wrap">
+    <div class="stage rv"><canvas id="c2" aria-label="Dente em 3D. Toque em uma parte para saber mais."></canvas><div id="nogl">A visualização 3D não está disponível neste aparelho. Use os botões ao lado.</div></div>
+    <div class="rv">
+      <h2>Conheça o seu dente</h2>
+      <div class="chips" role="group" aria-label="Partes do dente">
+        <button class="chip" data-k="esmalte" aria-pressed="false">Esmalte</button>
+        <button class="chip" data-k="gengiva" aria-pressed="false">Gengiva</button>
+        <button class="chip" data-k="raiz" aria-pressed="false">Raiz</button>
+      </div>
+      <p id="info" aria-live="polite">Toque no dente, na gengiva ou na raiz, ou use os botões acima.</p>
+      <label for="w"><span>Clareamento</span><output id="wo">Natural</output></label>
+      <input id="w" type="range" min="0" max="100" value="0">
+      <small>Simulação ilustrativa. O resultado real depende de cada caso.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SOBRE -->
+<section class="wrap about" id="sobre">
+  <div class="photo rv">Foto do(a) dentista responsável<br>(substituir)</div>
+  <div class="rv">
+    <h2>Cuidado que começa pela escuta</h2>
+    <p class="lead">A Clínica Kurata une odontologia estética e atendimento humano. Cada tratamento começa com uma conversa sobre o que você quer mudar no sorriso.</p>
+    <ul><li>Atendimento cuidadoso, pensado para o seu conforto</li><li>Corpo clínico especializado em várias áreas da odontologia</li><li>Ambiente acolhedor, sem pressa</li></ul>
+    <p><b>Dentista responsável:</b> Dr(a). [nome] · CRO-SP [número]</p>
+  </div>
+</section>
+
+<!-- 6. DEPOIMENTOS (textos de exemplo: trocar por avaliações reais) -->
+<section class="wrap" style="padding-top:0">
+  <h2 class="rv">Quem já cuidou do sorriso aqui</h2>
+  <div class="quotes">
+    <blockquote class="rv">“Me explicaram tudo antes de começar. Saí da primeira consulta sabendo o que fazer.”<cite>Mariana S. · Clareamento</cite></blockquote>
+    <blockquote class="rv">“Ambiente tranquilo e equipe atenciosa. Voltei sem receio.”<cite>Rafael T. · Limpeza</cite></blockquote>
+    <blockquote class="rv">“O acompanhamento do aparelho foi muito claro, com prazos combinados.”<cite>Beatriz L. · Ortodontia</cite></blockquote>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="wrap" id="duvidas" style="padding-top:0;max-width:860px">
+  <h2 class="rv">Dúvidas frequentes</h2>
+  <div class="rv" style="margin-top:24px">
+    <details><summary>Clareamento estraga o dente?</summary><p>Quando feito com indicação e acompanhamento do dentista, não danifica o esmalte. Pode haver sensibilidade temporária, que é controlada ajustando a técnica.</p></details>
+    <details><summary>Aceitam convênio?</summary><p>Chame a gente no WhatsApp para confirmar se o seu convênio é atendido e quais procedimentos cobre.</p></details>
+    <details><summary>Como funciona a primeira consulta?</summary><p>Fazemos uma avaliação completa, conversamos sobre seus objetivos e apresentamos um plano com etapas, prazos e valores.</p></details>
+    <details><summary>Quanto tempo dura um tratamento ortodôntico?</summary><p>Depende de cada caso. O dentista define a estimativa depois de avaliar sua mordida e seus dentes.</p></details>
+    <details><summary>Tratamento de canal dói?</summary><p>É feito com anestesia local, então a dor durante o procedimento é controlada. Depois, um desconforto leve pode aparecer e é acompanhado pelo dentista.</p></details>
+  </div>
+</section>
+
+<!-- 8. AGENDAR -->
+<section class="cta" id="contato">
+  <div class="wrap">
+    <h2 class="rv">Vamos planejar o seu sorriso?</h2>
+    <p class="lead">Fale com a gente pelo WhatsApp e agende uma avaliação.</p>
+    <a class="btn" href="https://wa.me/5511959164208?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Kurata%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar avaliação</a>
+    <p style="font-size:1.15rem">WhatsApp <a href="tel:+5511959164208">(11) 95916-4208</a><br>Telefone <a href="tel:+551141351775">(11) 4135-1775</a></p>
+    <div class="info">
+      <div><b>Endereço</b>Rua do Carmo, 78, sala 1<br>Centro, Taboão da Serra - SP<br>CEP 06754-040</div>
+      <div><b>Horários</b>Seg a sex, 8h às 18h<br>Confirme pelo WhatsApp</div>
+      <div><b>Como chegar</b><a href="https://www.google.com/maps/search/?api=1&query=Rua+do+Carmo%2C+78+Centro+Tabo%C3%A3o+da+Serra+SP" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Clínica Odontológica Kurata</strong>
+  <span>Odontologia Estética · Rua do Carmo, 78, sala 1 · Centro, Taboão da Serra - SP</span>
+  <span class="soc"><a href="https://www.instagram.com/clinicakurata/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/5511959164208?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Kurata%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">WhatsApp</a><a href="tel:+5511959164208">(11) 95916-4208</a><a href="tel:+551141351775">(11) 4135-1775</a></span>
+  <span>Responsável técnico: Dr(a). [nome] · CRO-SP [número]</span>
+  <span>© 2026 Clínica Odontológica Kurata</span>
+</footer>
+
+<!-- Botão flutuante do WhatsApp: abre a conversa direto -->
+<a id="wa" href="https://wa.me/5511959164208?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Cl%C3%ADnica%20Kurata%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar com a Clínica Kurata no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),T=window.THREE;
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.documentElement.classList.add('js');
+
+/* ---- Aparecer suave ao rolar ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* ---- Dente 3D (formas básicas do Three.js) ---- */
+function build(){
+  const g=new T.Group();
+  const en=new T.MeshPhysicalMaterial({color:0xe3ce9c,roughness:.28,clearcoat:.7,clearcoatRoughness:.2});
+  const gm=new T.MeshStandardMaterial({color:0xd9848c,roughness:.55,side:T.DoubleSide});
+  const rt=new T.MeshStandardMaterial({color:0xe8d9bd,roughness:.6});
+  const cg=new T.SphereGeometry(1,72,56),p=cg.attributes.position;
+  for(let i=0;i<p.count;i++){ // esfera -> coroa com 4 cúspides e sulco central
+    let x=p.getX(i),y=p.getY(i),z=p.getZ(i);
+    const r=Math.hypot(x,z),a=Math.atan2(z,x),top=Math.max(y,0);
+    y=y*.78+top*(.2*Math.pow(Math.abs(Math.cos(2*a)),1.5)*r-.22*Math.exp(-r*r*8));
+    p.setXYZ(i,x,Math.max(y,-.55),z);
+  }
+  cg.rotateY(-Math.PI/2);cg.computeVertexNormals();
+  const crown=new T.Mesh(cg,en);
+  const prof=[[.62,-.5],[.84,-.42],[.92,-.58],[.86,-.8],[.55,-.96],[.4,-1]].map(a=>new T.Vector2(a[0],a[1]));
+  const gum=new T.Mesh(new T.LatheGeometry(prof,48),gm);
+  const roots=[-1,1].map(s=>{const m=new T.Mesh(new T.CylinderGeometry(.34,.07,1.7,24),rt);m.position.set(s*.38,-1.55,0);m.rotation.z=-s*.12;return m});
+  crown.userData.k='esmalte';gum.userData.k='gengiva';roots.forEach(r=>r.userData.k='raiz');
+  g.add(crown,gum,...roots);g.position.y=.55;
+  const c0=new T.Color(0xe3ce9c),c1=new T.Color(0xfcfaf6),meshes=[crown,gum,...roots];
+  return{g,meshes,setW:t=>en.color.copy(c0).lerp(c1,t),
+    mark:k=>meshes.forEach(m=>m.material.emissive.setHex(m.userData.k===k?0x7a2f3a:0))};
+}
+function stage(cv,select){
+  let r;try{r=new T.WebGLRenderer({canvas:cv,alpha:true,antialias:true})}catch(e){return null}
+  r.setPixelRatio(Math.min(devicePixelRatio||1,2));
+  const sc=new T.Scene(),cam=new T.PerspectiveCamera(35,1,.1,50);cam.position.set(0,0,6.4);
+  sc.add(new T.HemisphereLight(0xfff3ee,0xc9a398,.9));
+  const k=new T.DirectionalLight(0xffffff,.9);k.position.set(3,4,5);sc.add(k);
+  const rim=new T.DirectionalLight(0xe8b4a0,.8);rim.position.set(-4,2,-3);sc.add(rim);
+  const t=build();t.g.rotation.y=.5;sc.add(t.g);
+  const fit=()=>{const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()};
+  new ResizeObserver(fit).observe(cv);fit();
+  let vis=false,drag=null,s0=null,last=0;
+  new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+  cv.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};s0={x:e.clientX,y:e.clientY};cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener('pointermove',e=>{if(!drag)return;t.g.rotation.y+=(e.clientX-drag.x)*.01;t.g.rotation.x=Math.max(-.5,Math.min(.5,t.g.rotation.x+(e.clientY-drag.y)*.005));drag.x=e.clientX;drag.y=e.clientY});
+  cv.addEventListener('pointerup',e=>{
+    if(drag&&select&&Math.hypot(e.clientX-s0.x,e.clientY-s0.y)<6){ // toque curto = escolher parte
+      const b=cv.getBoundingClientRect(),rc=new T.Raycaster();
+      rc.setFromCamera({x:(e.clientX-b.left)/b.width*2-1,y:-((e.clientY-b.top)/b.height*2-1)},cam);
+      const h=rc.intersectObjects(t.meshes)[0];if(h)select(h.object.userData.k);
+    }drag=null});
+  cv.addEventListener('pointercancel',()=>drag=null);
+  (function f(ts){requestAnimationFrame(f);if(!vis)return;const dt=Math.min(ts-last,50);last=ts;
+    if(!drag&&!rm)t.g.rotation.y+=dt*.0004;r.render(sc,cam)})(0);
+  return t;
+}
+
+/* ---- Painel "Conheça o seu dente" ---- */
+const txt={
+  esmalte:['Esmalte','A camada externa e mais dura do dente. Protege contra desgaste e bactérias, mas não se regenera sozinha. Por isso a prevenção importa.'],
+  gengiva:['Gengiva','O tecido que envolve e sustenta o dente. Gengiva saudável é rosada e firme. Sangramento ao escovar merece uma avaliação.'],
+  raiz:['Raiz','Fica dentro do osso e mantém o dente firme. É o lugar onde o implante faz o papel de uma nova raiz.']};
+let b=null;
+function sel(k){
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.k===k)));
+  const i=$('#info');i.innerHTML='';const h=document.createElement('b');h.textContent=txt[k][0];
+  i.append(h,document.createElement('br'),txt[k][1]);if(b)b.mark(k);
+}
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>sel(c.dataset.k));
+$('#w').oninput=e=>{const n=+e.target.value;if(b)b.setW(n/100);$('#wo').textContent=n<34?'Natural':n<67?'Mais claro':'Bem claro'};
+if(T){stage($('#c1'));b=stage($('#c2'),sel)}
+if(!b){$('#c2').style.display='none';$('#nogl').style.display='block'}
+if(!T||!$('#c1').width){/* sem 3D: o site continua funcionando */}
+})();
+</script>
+</body>
+</html>
